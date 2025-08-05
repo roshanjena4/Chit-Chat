@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+@model LoginModel
+
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">CHIT CHAT</h1>
+        <form asp-action="Login" method="post" id="loginForm">
+            <div class="input-group">
+                <label asp-for="Email" for="username" class="sr-only">Username</label>
+                <input asp-for="Email" type="email" id="username" placeholder="Email">
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="input-group">
+                <label asp-for="Password" for="password" class="sr-only">Password</label>
+                <input asp-for="Password" type="password" id="password" placeholder="Password">
+                <span asp-validation-for="Password"></span>
+            </div>
+            <button type="submit" class="auth-button">LOG IN</button>
+        </form>
+        <p class="auth-link">
+            DON'T HAVE AN ACCOUNT ? <a asp-controller="Authentication" asp-action="Signup">CREATE ONE</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model ChatApplication.Models.SignupModel
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">CHIT CHAT</h1>
+        <form id="registerForm" asp-action="Signup" method="post">
+            <div class="input-group">
+                <label  asp-for="Name" class="sr-only">Name</label>
+                <input asp-for="Name" type="text"  name="Name" placeholder="Name" >
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="input-group">
+                <label for="email" class="sr-only">Email</label>
+                <input asp-for="Email" type="email" id="email" name="email" placeholder="Email Address" >
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="input-group">
+                <label asp-for="Password" class="sr-only">Password</label>
+                <input asp-for="Password" type="password"  placeholder="Password" >
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password" class="sr-only">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" >
+            </div>
+            <button type="submit" class="auth-button">CREATE USER</button>
+        </form>
+        <p class="auth-link">
+            ALREADY HAVE AN ACCOUNT ? <a asp-controller="Authentication" asp-action="Login">LOGIN</a>
+        </p>
+    </div>
+</div>
